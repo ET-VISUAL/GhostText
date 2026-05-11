@@ -1,5 +1,4 @@
 let textInput = document.querySelector('#text-input')
-
 const key = {
     'a' : 'd',
     'b' : 'e',
@@ -26,7 +25,8 @@ const key = {
     'w' : 'z',
     'x' : 'a',
     'y' : 'b',
-    'z' : 'c'
+    'z' : 'c',
+    ' ': '0'
 }
 
 document.querySelector('button').onclick = () => {

@@ -1,0 +1,20 @@
+{
+  "name": "ghosttext-project",
+  "version": "1.0.0",
+  "description": "crypto text project",
+  "homepage": "https://github.com/ET-VISUAL/GhostText#readme",
+  "bugs": {
+    "url": "https://github.com/ET-VISUAL/GhostText/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ET-VISUAL/GhostText.git"
+  },
+  "license": "ISC",
+  "author": "Efimenko Timofey",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
