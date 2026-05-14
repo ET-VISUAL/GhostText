@@ -4,3 +4,5 @@ install:
 	@echo ">>>Start install dependencies"
 	npm ci
 	@echo ">>>dependencies installed successfully^^"
+
+

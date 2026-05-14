@@ -7,7 +7,6 @@
 ████    █   ████ █   █  █   ███  █   █ █████ █     
 █       █         █ █   █      █ █   █ █   █ █     
 █████   █          █   ███ ████   ███  █   █ █████   
-  Ethical Hacker
 
 
 $ ./cryptool --encrypt caesar --input "Hello, World!"
