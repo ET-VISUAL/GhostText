@@ -1,57 +1,23 @@
-const key = {
-    'a' : 'd',
-    'b' : 'e',
-    'c' : 'f',
-    'd' : 'g',
-    'e' : 'h',
-    'f' : 'i',
-    'g' : 'j',
-    'h' : 'k',
-    'i' : 'l',
-    'j' : 'm',
-    'k' : 'n',
-    'l' : 'o',
-    'm' : 'p',
-    'n' : 'q',
-    'o' : 'r',
-    'p' : 's',
-    'q' : 't',
-    'r' : 'u',
-    's' : 'v',
-    't' : 'w',
-    'u' : 'x',
-    'v' : 'y',
-    'w' : 'z',
-    'x' : 'a',
-    'y' : 'b',
-    'z' : 'c'
-}
-//обратный ключ для расшифровки
-const reverseKey = {}
-for (let char in key) {
-    reverseKey[key[char]] = char
+function shiftChar(char, shift) {
+    if (char >= 'a' && char <= 'z') {
+        let newCode = ((char.charCodeAt(0) - 97 + shift) % 26 + 26) % 26 + 97
+        return String.fromCharCode(newCode)
+    } else if (char >= 'A' && char <= 'Z') {
+        let newCode = ((char.charCodeAt(0) - 65 + shift) % 26 + 26) % 26 + 65
+        return String.fromCharCode(newCode)
+    } else {
+        return char
+    }
 }
 
-export function encrypt (someValue) {
+export function caesarEncrypt(someValue, shift) {
     let resultEncrypted = ''
     for (let i = 0; i < someValue.length; i++) {
-        if (key[someValue[i]]) {
-            resultEncrypted += key[someValue[i]]
-        } else {
-            resultEncrypted += someValue[i]
-        }
+        resultEncrypted += shiftChar(someValue[i], shift)
     }
     return resultEncrypted
 }
 
-export function decrypt (someValue) {
-    let resultDecrypted = ''
-    for (let i = 0; i < someValue.length; i++) {
-        if (reverseKey[someValue[i]]) {
-            resultDecrypted += reverseKey[someValue[i]]
-        } else {
-            resultDecrypted += someValue[i]
-        }
-    }
-    return resultDecrypted
+export function caesarDecrypt(someValue, shift) {
+    return caesarEncrypt(someValue, -shift)
 }

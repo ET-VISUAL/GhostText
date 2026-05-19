@@ -22,10 +22,20 @@ button {
     font-weight: bold;
 }
 
-.encrypt-btn {
-    background: red;
+.shift-option {
+    display: none;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
 }
 
-.decrypted-btn {
-    background: greenyellow;
+.shift-option label {
+    margin-right: 10px;
+}
+
+#shift-input {
+    width: 70px;
+    padding: 4px;
+    text-align: center;
 }

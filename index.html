@@ -11,6 +11,19 @@
         <h1 class="text-centeral">GhostText</h1>
         <h2 class="description">Программа создана для шифровки и дешифровки текста.</h2>
         <small>Вводите только строчные латинские буквы (a-z). Заглавные и символы останутся без изменений.</small>
+        <div class="choice">
+            <form>
+                <label for="cipher-choice">Выберите шифр:</label>
+                <select id="cipher-choice">
+                    <option value="caesar">Шифр цезаря</option>
+                    <option value="atbash">Шифр атбаша</option>
+                </select>
+                <div class="shift-option" id="shift-option">
+                    <label for="shift-input">Выберите сдвиг (1-25)</label>
+                    <input type="number" id="shift-input" value="3" min="1" max="25" step="1">
+                </div>
+            </form>
+        </div>
         <div>
             <input type="text" id="text-input" placeholder="Введите текст">
             <button id="encrypt-btn">Зашифровать👁</button>
