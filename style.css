@@ -1,25 +1,116 @@
+body {
+    background-color: rgb(20, 20, 20);
+    color: chartreuse;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
 .container {
-    text-align: center;
-    border-radius: 12px;
+    background: rgba(16, 23, 41, 0.8);
+    border: 1px solid #00ff66;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 4px;
 }
 
-input {
-    width: 12%;
-    margin-bottom: 15px;
+.text-central {
+    font-size: 20px;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(0, 255, 102, 0.5);
+}
+
+.cipher-panel {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.crypto-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: bold;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 700px;
+    width: 100%;
 }
 
-button {
-    width: 10%;
-    padding: 12px;
+#text-input {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-family: sans-serif;
+    outline: none; /* свойство создающее обводку вокруг элемента*/
+    transition: all 0.3s ease; /* свойство отвечающее за анимацию изменяющихся стилей*/
+}
+
+#text-input::focus {
+    border-color: #00fe9d;
+    box-shadow: 0 0 15px rgba(0, 241, 254, 0.474);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+#encrypt-btn, #decrypted-btn {
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
     border: none;
-    border-radius: 6px;
     cursor: pointer;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Настройка для кнопки "Зашифровать" */
+#encrypt-btn {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    color: #0f172a;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+#encrypt-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+}
+
+#encrypt-btn:active {
+    transform: translateY(0);
+}
+
+/* Настройка для кнопки "Расшифровать" */
+#decrypted-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#decrypted-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #ffb03a;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 176, 58, 0.15);
+}
+
+#decrypted-btn:active {
+    transform: translateY(0);
 }
 
 .shift-option {
