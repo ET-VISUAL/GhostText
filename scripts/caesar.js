@@ -1,11 +1,23 @@
 function shiftChar(char, shift) {
-  if (char >= 'a' && char <= 'z') {
-    let newCode = ((char.charCodeAt(0) - 97 + shift) % 26 + 26) % 26 + 97
-    return String.fromCharCode(newCode)
+  //Рус. Алфавит
+  if (char >= 'А' && char <= 'Я') {
+    let bigRus = ((char.charCodeAt(0) - 1072 + shift) % 32 + 32) % 32 + 1072
+    return String.fromCharCode(bigRus).toUpperCase()
+  }
+
+  else if (char >= 'а' && char <= 'я') {
+    let littleRus = ((char.charCodeAt(0) - 1072 + shift) % 32 + 32) % 32 + 1072
+    return String.fromCharCode(littleRus)
+  }
+
+  //Англ. Алфавит
+  else if (char >= 'a' && char <= 'z') {
+    let littleEn = ((char.charCodeAt(0) - 97 + shift) % 26 + 26) % 26 + 97
+    return String.fromCharCode(littleEn)
   }
   else if (char >= 'A' && char <= 'Z') {
-    let newCode = ((char.charCodeAt(0) - 65 + shift) % 26 + 26) % 26 + 65
-    return String.fromCharCode(newCode)
+    let bigEn = ((char.charCodeAt(0) - 65 + shift) % 26 + 26) % 26 + 65
+    return String.fromCharCode(bigEn)
   }
   else {
     return char

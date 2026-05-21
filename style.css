@@ -253,3 +253,8 @@ a {
     font-family: 'Times New Roman', Times, serif;
     background: linear-gradient(150deg, #28292f 5%, #262811 70%);
 }
+
+textarea {
+    width: 350px;
+    height: 90px;
+}
