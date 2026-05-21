@@ -28,9 +28,47 @@ body {
 }
 
 .cipher-panel {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #1a4d1a;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.cipher-panel:hover {
+    border-color: #2ecc2e;
+    box-shadow: 0 0 18px rgba(46, 204, 46, 0.4);
+}
+
+.cipher-panel form {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
-    margin-bottom: 20px;
+}
+
+.cipher-panel label {
+    color: #3ad03a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 3px #00aa00;
+}
+
+#cipher-choice {
+    background-color: #0f100f;
+    color: #d5f1f2;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 .crypto-row {
@@ -75,20 +113,20 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.25s ease;
+    transition: all 1s ease;
     white-space: nowrap;
 }
 
 /* Настройка для кнопки "Зашифровать" */
 #encrypt-btn {
-    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    background: linear-gradient(135deg, #00f2fe 0%, #9faf11 100%);
     color: #0f172a;
     box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
 }
 
 #encrypt-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+    background: #d5f1f2;
+    box-shadow: 0 6px 20px rgba(38, 208, 205, 0.5);
 }
 
 #encrypt-btn:active {
@@ -97,13 +135,14 @@ body {
 
 /* Настройка для кнопки "Расшифровать" */
 #decrypted-btn {
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, #ed9614 0%, #222b8d 100%);
     color: #e2e8f0;
+    box-shadow: 0 2px 7px rgba(254, 198, 304, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 #decrypted-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(63, 72, 18, 0.12);
     border-color: #ffb03a;
     color: #fff;
     box-shadow: 0 4px 15px rgba(255, 176, 58, 0.15);
@@ -113,20 +152,91 @@ body {
     transform: translateY(0);
 }
 
-.shift-option {
-    display: none;
-    margin-top: 10px;
-    padding: 8px;
-    background-color: #f5f5f5;
-    border-radius: 6px;
+/*Кнопка для копирования результа*/
+#copy-text {
+    gap: 5px;
+    cursor: pointer;
+    background: linear-gradient(149deg, #0b220b 1%, #2f483576 50%);
+    color: rgb(255, 255, 255);
+    border-radius: 7px;
 }
 
-.shift-option label {
-    margin-right: 10px;
+#copy-text:hover {
+    background: rgba(13, 13, 13, 0.5);
+    border-color: rgb(59, 176, 13);
+    box-shadow: 0 1px 5px rgba(32, 174, 89, 0.6);
+    transition: all 1s ease;
+}
+
+#copy-text:active {
+    transform: matrix(0.97s);
+}
+
+.copy-toast {
+    visibility: hidden;
+    color: #e2e8f0;
+    font-size: 12px;
+}
+
+#shift-option.shift-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 15px;
+}
+
+#shift-option label {
+    font-family: 'Times New Roman', Times, serif;
+    color: #54c02d;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    user-select: none;
 }
 
 #shift-input {
-    width: 70px;
-    padding: 4px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(0, 254, 131, 0.25);
+    color: #2cbbc3;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 12px;
+    width: 55px;
+    border-radius: 8px;
+    outline: none;
     text-align: center;
+    transition: all 0.25s ease;
+}
+
+#shift-input::-webkit-inner-spin-button,
+#shift-input::-webkit-outer-spin-button {
+    cursor: pointer;
+    background: rgb(13, 151, 87);
+}
+
+.result-option {
+    padding-top: 10px;
+    padding-left: 25px;
+}
+
+#result-input {
+    background-color: black;
+    color: #00ff00;
+    border: 2px solid #108183;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    padding-top: 5px;
+    border-radius: 9px;
+}
+
+#result-input:focus {
+    outline: none;
+    transition: all 0.5s ease-in;
+    box-shadow: 0 0 5px #00ff00;
 }

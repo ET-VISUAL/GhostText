@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Шифрование Текста</title>
 </head>
+
 <body>
     <div class="container">
         <h1 class="text-centeral">🔒GhostText</h1>
@@ -25,11 +27,17 @@
         </div>
         <div class="crypto-row">
             <input type="text" id="text-input" placeholder="Введите текст">
-            <button id="encrypt-btn">Зашифровать👁</button>
+            <button id="encrypt-btn">Зашифровать🛡️</button>
             <button id="decrypted-btn">Расшифровать🔑</button>
         </div>
-        <p id="out"></p>
+        <div class="result-option">
+            <label for="result-input">Результат:</label>
+            <input type="text" id="result-input" readonly placeholder="Результат шифрования...">
+            <button id="copy-text">Скопировать результат🔗</button>
+        </div>
+        <div class="copy-toast">Скопировано!</div>
     </div>
     <script type="module" src="scripts/app.js"></script>
 </body>
+
 </html>

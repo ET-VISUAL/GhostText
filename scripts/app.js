@@ -24,7 +24,7 @@ document.querySelector('#encrypt-btn').onclick = () => { //кнопка для �
     } else {
         result = 'Данного шифра нет в списке.'
     }
-    document.querySelector('#out').textContent = result
+    document.querySelector('#result-input').value = result
     textInput.value = result
 }
 
@@ -41,8 +41,15 @@ document.querySelector('#decrypted-btn').onclick = () => { //кнопка для
     } else {
         result = 'Данного шифра нет в списке.'
     }
-    document.querySelector('#out').textContent = result
+    document.querySelector('#result-input').value = result
     textInput.value = result
+}
+
+document.querySelector('#copy-text').onclick = () => {
+    let resultField = document.querySelector('#result-input')
+    resultField.select()
+    document.execCommand('copy')
+    alert('Результат шифрования скопирован!')
 }
 
 //Функция для отображения блока со сдвигом если используется шифр цезаря
