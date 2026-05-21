@@ -46,16 +46,16 @@ Output: Hello, World!
 
 ## Инструкция
 Есть два варианта запуска
-## 1
+## Вариант 1
 Клонируйте репозиторий 
 <pre>https://github.com/ET-VISUAL/GhostText.git</pre>
 
 далее переходите в мой проект
 <pre>cd GhostText</pre>
 
-    Заходите в vs code и нажмите F5 (или скачайте расширение live server)
+Заходите в vs code и нажмите F5 (или скачайте расширение live server)
 
-## 2
+## Вариант 2
 Зайдите в любой браузер
 Перейдите по ссылке ниже👇
 <pre>https://et-ghosttext.netlify.app/</pre>
