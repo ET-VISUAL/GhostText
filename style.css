@@ -240,3 +240,16 @@ body {
     transition: all 0.5s ease-in;
     box-shadow: 0 0 5px #00ff00;
 }
+
+footer {
+    padding-top: 10px;
+    font-size: 15px;
+    padding-left: 40%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(150deg, #28292f 5%, #262811 70%);
+}
