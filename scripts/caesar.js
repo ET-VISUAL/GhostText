@@ -1,8 +1,8 @@
 function shiftChar(char, shift) {
   //Рус. Алфавит
   if (char >= 'А' && char <= 'Я') {
-    let bigRus = ((char.charCodeAt(0) - 1072 + shift) % 32 + 32) % 32 + 1072
-    return String.fromCharCode(bigRus).toUpperCase()
+    let bigRus = ((char.charCodeAt(0) - 1040 + shift) % 32 + 32) % 32 + 1040
+    return String.fromCharCode(bigRus)
   }
 
   else if (char >= 'а' && char <= 'я') {
