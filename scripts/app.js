@@ -27,6 +27,7 @@ document.querySelector('#encrypt-btn').onclick = () => { // кнопка для 
   }
   document.querySelector('#result-input').value = result
   textInput.value = result
+  saveToLocalStorage()
 }
 
 document.querySelector('#decrypted-btn').onclick = () => { // кнопка для расшифровки соответственно
@@ -46,6 +47,7 @@ document.querySelector('#decrypted-btn').onclick = () => { // кнопка дл�
   }
   document.querySelector('#result-input').value = result
   textInput.value = result
+  saveToLocalStorage()
 }
 
 document.querySelector('#copy-text').onclick = () => {
@@ -54,6 +56,29 @@ document.querySelector('#copy-text').onclick = () => {
   document.execCommand('copy')
   alert('Результат шифрования скопирован!')
 }
+
+function saveToLocalStorage() {
+  const data = {
+    text: textInput.value,
+    result: document.querySelector('#result-input').value,
+    cipher: cipherSelect.value,
+    shift: shiftInput.value
+  }
+  localStorage.setItem('ghostTextData', JSON.stringify(data))
+}
+
+function loadFromLocalStorage() {
+  const saved = localStorage.getItem('ghostTextData')
+  if (saved) {
+    const data = JSON.parse(saved)
+    textInput.value = data.text || ''
+    document.querySelector('#result-input').value = data.result || ''
+    cipherSelect.value = data.cipher || 'caesar'
+    shiftInput.value = data.shift || 3
+    toggleShiftInput()
+  }
+}
+loadFromLocalStorage()
 
 // Функция для отображения блока со сдвигом если используется шифр цезаря
 function toggleShiftInput() {
@@ -65,5 +90,12 @@ function toggleShiftInput() {
   }
 }
 // метод addEventListener используется для действий пользователя (клик мышки и тд.) и выполнении кода при каком то условии
-cipherSelect.addEventListener('change', toggleShiftInput)
+cipherSelect.addEventListener('change', () => {
+  saveToLocalStorage()
+  toggleShiftInput()
+})
+
+shiftInput.addEventListener('input, saveToLocalStorage')
+textInput.addEventListener('input', saveToLocalStorage)
+
 toggleShiftInput()
