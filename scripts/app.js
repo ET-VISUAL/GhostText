@@ -26,7 +26,6 @@ document.querySelector('#encrypt-btn').onclick = () => { // кнопка для 
     result = 'Данного шифра нет в списке.'
   }
   document.querySelector('#result-input').value = result
-  textInput.value = result
   saveToLocalStorage()
 }
 
@@ -46,7 +45,6 @@ document.querySelector('#decrypted-btn').onclick = () => { // кнопка дл�
     result = 'Данного шифра нет в списке.'
   }
   document.querySelector('#result-input').value = result
-  textInput.value = result
   saveToLocalStorage()
 }
 
